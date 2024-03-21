@@ -1,7 +1,0 @@
----
-- op: replace
-  path: /metadata/name
-  value: base-postgres
-- op: replace
-  path: /metadata/labels/app
-  value: base-postgres

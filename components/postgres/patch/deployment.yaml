@@ -15,7 +15,7 @@
   value: 
     - name: postgresdb
       persistentVolumeClaim:
-        claimName: base-claim-postgres
+        claimName: base-volume-claim-postgres
 - op: add
   path: /spec/template/spec/containers/0/envFrom
   value:
