@@ -9,7 +9,7 @@ metadata:
     type: local
     app: base-volume
 spec:
-  storageClassName: manual
+  storageClassName: "standard"
   capacity:
     # PV Storage capacity
     storage: 8Gi
