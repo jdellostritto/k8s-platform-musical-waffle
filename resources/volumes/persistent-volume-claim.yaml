@@ -3,9 +3,9 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   # Name the volume chain
-  name: base-claim
+  name: base-volume-claim
   labels:
-    app: base-claim
+    app: base-volume-claim
 spec:
   storageClassName: manual
   accessModes:

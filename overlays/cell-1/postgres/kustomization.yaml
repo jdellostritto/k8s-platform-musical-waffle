@@ -11,7 +11,7 @@ resources:
 # Because the are the saem for evey environemnt each env will pull the patch from the components (DRY) 
 components:
   - ../../../components/postgres
-
+  - ../../../components/volumes
 # The name suffix will be appended the name of the resources (bases). 
 # In this example case our resource names are simply called `base`. 
 # So our service and deployment names will end up being:
