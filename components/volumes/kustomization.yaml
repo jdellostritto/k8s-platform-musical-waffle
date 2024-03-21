@@ -5,8 +5,8 @@ patches:
 - path: ./patch/persistentVolume.yaml
   target:
     kind: PersistentVolume
-    name: base
+    name: base-volume
 - path: ./patch/persistentVolumeClaim.yaml
   target:
     kind: PersistentVolumeClaim
-    name: base
+    name: base-volume-claim
