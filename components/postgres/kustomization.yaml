@@ -9,8 +9,8 @@ patches:
 - path: ./patch/deployment.yaml
   target:
     kind: Deployment
-    name: base
+    name: base-deploy
 - path: ./patch/service.yaml
   target:
     kind: Service
-    name: base
+    name: base-service
