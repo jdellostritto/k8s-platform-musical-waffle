@@ -7,3 +7,6 @@
   value:
     - name: http
       containerPort: 5432
+- op: add
+  path: /spec/template/spec/containers/0/imagePullPolicy
+  value: "IfNotPresent"
