@@ -1,7 +1,7 @@
 kind: NetworkPolicy
 apiVersion: networking.k8s.io/v1
 metadata:
-  name: base-policy
+  name: base
 spec:
   podSelector:
     matchLabels:
@@ -15,4 +15,4 @@ spec:
   - from: []
     ports:
     - protocol: TCP
-      port: 8700
+      port: 8080

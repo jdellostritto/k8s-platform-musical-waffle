@@ -1,7 +1,7 @@
 ---
 - op: replace
   path: /spec/template/spec/containers/0/name
-  value: base-deploy-postgres
+  value: base-postgres
 - op: add
   path: /spec/template/spec/containers/0/ports
   value:
@@ -15,7 +15,7 @@
   value: 
     - name: postgresdb
       persistentVolumeClaim:
-        claimName: base-volume-claim-postgres
+        claimName: base-postgres
 - op: add
   path: /spec/template/spec/containers/0/envFrom
   value:

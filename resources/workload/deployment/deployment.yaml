@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: base-deploy
+  name: base
   # Namespaces Guide: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
   #namespace: UNDEFINED
   # Annotations Guide: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/

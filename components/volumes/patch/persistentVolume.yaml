@@ -4,4 +4,4 @@
 #  value: base-volume-postgres
 - op: replace
   path: /metadata/labels/app
-  value: base-volume-postgres
+  value: base-postgres

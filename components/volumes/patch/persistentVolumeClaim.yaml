@@ -4,4 +4,4 @@
 #  value: base-volume-claim-postgres
 - op: replace
   path: /metadata/labels/app
-  value: base-volume-claim-postgres
+  value: base-postgres
