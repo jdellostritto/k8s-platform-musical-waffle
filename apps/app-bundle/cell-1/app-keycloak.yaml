@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-keycloak-cell-1
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: cell1
+    name: in-cluster
+  project: project-cell-1
+  source:
+    path: overlays/cell-1/keycloak
+    repoURL: https://github.com/jdellostritto/k8s-platform-musical-waffle
+    targetRevision: HEAD
+    

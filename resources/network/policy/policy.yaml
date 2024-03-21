@@ -1,0 +1,18 @@
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: access-shared-keycloak
+spec:
+  podSelector:
+    matchLabels:
+      secure: ${PROJECT}
+  ingress:
+  - from:
+    # we allow all access from keycloak to keycloak
+    - podSelector:
+        matchLabels:
+          secure: ${PROJECT}
+  - from: []
+    ports:
+    - protocol: TCP
+      port: 8080

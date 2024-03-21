@@ -1,0 +1,27 @@
+---
+#- op: replace
+#  path: /metadata/name
+#  value: app-
+- op: replace
+  path: /spec/ingressClassName
+  value: ngrok
+- op: replace
+  path: /spec/rules
+  value:
+  - http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: base-app-2048
+            port:
+              number: 80
+      - pathType: Prefix
+        path: /guest
+        backend:
+          service:
+            name: base-guest-book
+            port:
+              number: 80
+    host: select-panda-personally.ngrok-free.app

@@ -1,0 +1,38 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+# Our base Manifests
+resources:
+- ../../../resources/workload/deployment
+- ../../../resources/network/service
+- ../../../resources/network/policy
+# These components are for the deploymnent and service.
+# components are shared across each environment. There are no patches for the service and deployment here.
+# Because the are the same for evey environemnt each env will pull the patch from the components (DRY)
+components:
+  - ../../../components/keycloak
+
+# The name suffix will be appended the name of the resources (bases). 
+# In this example case our resource names are simply called `base`. 
+# So our service and deployment names will end up being:
+#  - 'base' + '-app-2048'
+# This file as well as the ingress file will need to be aware of this name.
+nameSuffix: -keycloak
+
+# The image and the tag to use.
+images:
+- name: UNDEFINED
+  newName: flip-platform-keycloak
+  newTag: 24.0
+
+# Annotation Transformer - used to determine where to put annotations
+transformers:
+- ./transformers.yaml
+
+# The common label used for lables and Selectors.
+commonLabels:
+  app.kubernetes.io/name: base-keycloak
+
+# Replicas
+replicas:
+- name: base-keycloak
+  count: 1
