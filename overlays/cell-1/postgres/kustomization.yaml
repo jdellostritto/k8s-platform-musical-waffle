@@ -10,8 +10,9 @@ resources:
 # Components are shared across each environment. There are no patches for the service and deployment here.
 # Because the are the saem for evey environemnt each env will pull the patch from the components (DRY) 
 components:
-  - ../../../components/postgres
   - ../../../components/volumes
+  - ../../../components/postgres
+
 # The name suffix will be appended the name of the resources (bases). 
 # In this example case our resource names are simply called `base`. 
 # So our service and deployment names will end up being:
