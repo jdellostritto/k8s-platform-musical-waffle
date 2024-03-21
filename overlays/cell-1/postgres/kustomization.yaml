@@ -37,7 +37,7 @@ replicas:
   count: 1 
 
 configMapGenerator:
-- name: postgres-config
+- name: config-map-
   literals:
     - SAMPLE_DB_USER=identity_user
     - SAMPLE_DB_PASSWORD=xC2TQYTXR5vzhwtT

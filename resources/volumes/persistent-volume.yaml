@@ -3,11 +3,11 @@ kind: PersistentVolume
 apiVersion: v1
 metadata:
   # Name the persistent chain
-  name: name-volume
+  name: base-volume
   # Labels for identifying PV
   labels:
     type: local
-    app: name-volume
+    app: base-volume
 spec:
   storageClassName: manual
   capacity:

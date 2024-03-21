@@ -10,3 +10,19 @@
 - op: add
   path: /spec/template/spec/containers/0/imagePullPolicy
   value: "Never"
+- op: add
+  path: /spec/template/spec/volumes
+  value: 
+    - name: postgresdb
+      persistentVolumeClaim:
+        claimName: base-claim-postgres
+- op: add
+  path: /spec/template/spec/containers/0/envFrom
+  value:
+    - configMapRef:
+        name: config-map-postgres
+- op: add
+  path: /spec/template/spec/containers/0/volumeMounts
+  value:
+    - mountPath: /var/lib/postgresql/data
+      name: postgresdb
