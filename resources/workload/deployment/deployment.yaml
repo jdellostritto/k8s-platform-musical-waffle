@@ -103,12 +103,12 @@ spec:
         securityContext:
           # Containers should not run with allowPrivilegeEscalation
           # Checkov Guide: https://docs.bridgecrew.io/docs/bc_k8s_19
-          allowPrivilegeEscalation: false
+          #allowPrivilegeEscalation: false
           # Minimize the admission of containers with capabilities assigned
           # Checkov Guide: https://docs.bridgecrew.io/docs/bc_k8s_34
-          capabilities:
-            drop:
-            - ALL
+          #capabilities:
+          #  drop:
+          #  - ALL
           # Use read-only filesystem for containers where possible
           # Checkov Guide: https://docs.bridgecrew.io/docs/bc_k8s_21
           readOnlyRootFilesystem: false
