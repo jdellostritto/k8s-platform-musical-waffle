@@ -68,9 +68,9 @@ spec:
       automountServiceAccountToken: false
       # Ensure that the seccomp profile is set to docker/default or runtime/default
       # Checkov Guide: https://docs.bridgecrew.io/docs/bc_k8s_29
-      securityContext:
-        seccompProfile:
-          type: RuntimeDefault
+      #securityContext:
+      #  seccompProfile:
+      #    type: RuntimeDefault
       containers:
       - name: UNDEFINED
         image: UNDEFINED@sha256:abcd1234
@@ -100,7 +100,7 @@ spec:
           requests:
             cpu: 100m
             memory: 200Mi
-        securityContext:
+        #securityContext:
           # Containers should not run with allowPrivilegeEscalation
           # Checkov Guide: https://docs.bridgecrew.io/docs/bc_k8s_19
           #allowPrivilegeEscalation: false
@@ -111,12 +111,12 @@ spec:
           #  - ALL
           # Use read-only filesystem for containers where possible
           # Checkov Guide: https://docs.bridgecrew.io/docs/bc_k8s_21
-          readOnlyRootFilesystem: false
+          #readOnlyRootFilesystem: false
           # Minimize the admission of root containers
           # Checkov Guide: https://docs.bridgecrew.io/docs/bc_k8s_22
-          runAsNonRoot: true
+          #runAsNonRoot: true
           # Containers should run as a high UID to avoid host conflict
           # Checkov Guide: https://docs.bridgecrew.io/docs/bc_k8s_37
-          runAsUser: 10001
-          runAsGroup: 10001
+          #runAsUser: 10001
+          #runAsGroup: 10001
       terminationGracePeriodSeconds: 30
