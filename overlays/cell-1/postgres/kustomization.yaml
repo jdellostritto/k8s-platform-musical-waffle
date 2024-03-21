@@ -38,7 +38,7 @@ replicas:
   count: 1 
 
 configMapGenerator:
-- name: config-map-
+- name: config-map
   options:
     disableNameSuffixHash: true
   literals:
