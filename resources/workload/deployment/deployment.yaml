@@ -111,7 +111,7 @@ spec:
             - ALL
           # Use read-only filesystem for containers where possible
           # Checkov Guide: https://docs.bridgecrew.io/docs/bc_k8s_21
-          readOnlyRootFilesystem: true
+          readOnlyRootFilesystem: false
           # Minimize the admission of root containers
           # Checkov Guide: https://docs.bridgecrew.io/docs/bc_k8s_22
           runAsNonRoot: true
