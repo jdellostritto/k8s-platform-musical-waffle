@@ -38,6 +38,8 @@ replicas:
 
 configMapGenerator:
 - name: config-map-
+  options:
+    disableNameSuffixHash: true
   literals:
     - SAMPLE_DB_USER=identity_user
     - SAMPLE_DB_PASSWORD=xC2TQYTXR5vzhwtT

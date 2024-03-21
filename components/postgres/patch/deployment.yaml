@@ -20,7 +20,7 @@
   path: /spec/template/spec/containers/0/envFrom
   value:
     - configMapRef:
-        name: config-map--postgres-687kb9k2c7
+        name: config-map--postgres
 - op: add
   path: /spec/template/spec/containers/0/volumeMounts
   value:
