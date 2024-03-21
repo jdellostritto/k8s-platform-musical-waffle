@@ -14,11 +14,3 @@ patches:
   target:
     kind: Service
     name: base
-- path: ./patch/persistentVolume.yaml
-  target:
-    kind: PersistentVolume
-    name: base
-- path: ./patch/persistentVolumeClaim.yaml
-  target:
-    kind: PersistentVolumeClaim
-    name: base
