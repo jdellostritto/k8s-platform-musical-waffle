@@ -16,6 +16,3 @@ fieldSpecs:
 - kind: Service
   path: metadata/annotations
   create: true
-- kind: Ingress
-  path: metadata/annotations
-  create: false

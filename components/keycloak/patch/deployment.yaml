@@ -7,3 +7,35 @@
   value:
     - name: http
       containerPort: 8080
+- op: add
+  path: /spec/template/spec/containers/0/imagePullPolicy
+  value: "Never"
+- op: add
+  path: /spec/template/spec/containers/0/livenessProbe
+  value:
+    - httpGet:
+        path: /auth
+        port: 8080
+      initialDelaySeconds: 90
+      periodSeconds: 10
+- op: add
+  path: /spec/template/spec/containers/0/readinessProbe
+  value:
+    - httpGet:
+        path: /auth
+        port: 8080
+      initialDelaySeconds: 30
+      periodSeconds: 15
+#- op: add
+#  path: /spec/template/spec/containers/0/args
+#  value: ["-b", "0.0.0.0", "-bprivate", "$(HOSTIP)", "--server-config", "standalone-ha.xml"]
+- op: add
+  path: /spec/template/labels
+  value:
+    - name: base-keycloak
+      secure: base-keycloak
+- op: add
+  path: /spec/template/spec/containers/0/envFrom
+  value:
+    - configMapRef:
+        name: config-map-keycloak
