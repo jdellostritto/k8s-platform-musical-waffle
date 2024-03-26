@@ -39,3 +39,5 @@
   value:
     - configMapRef:
         name: config-map-keycloak
+- op: remove
+  path: /spec/template/spec/containers/0/resources
