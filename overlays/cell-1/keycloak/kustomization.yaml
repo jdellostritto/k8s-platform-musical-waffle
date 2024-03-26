@@ -22,7 +22,7 @@ nameSuffix: -keycloak
 images:
 - name: UNDEFINED
   newName: flip-platform-keycloak
-  newTag: 24.0
+  newTag: "24.0"
 
 # Annotation Transformer - used to determine where to put annotations
 transformers:
