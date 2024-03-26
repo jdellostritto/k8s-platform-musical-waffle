@@ -42,12 +42,12 @@ configMapGenerator:
   options:
     disableNameSuffixHash: true
   literals:
-    PROXY_ADDRESS_FORWARDING=true
-    DB_VENDOR=postgres
-    DB_ADDR=base-postgres
-    DB_PORT=5432
-    DB_DATABASE=identity
-    DB_USER=identity_user
-    DB_PASSWORD=xC2TQYTXR5vzhwtT
-    KEYCLOAK_USER=admin
-    KEYCLOAK_PASSWORD=password
+    - PROXY_ADDRESS_FORWARDING=true
+    - DB_VENDOR=postgres
+    - DB_ADDR=base-postgres
+    - DB_PORT=5432
+    - DB_DATABASE=identity
+    - DB_USER=identity_user
+    - DB_PASSWORD=xC2TQYTXR5vzhwtT
+    - KEYCLOAK_USER=admin
+    - KEYCLOAK_PASSWORD=password
