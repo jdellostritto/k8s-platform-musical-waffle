@@ -19,13 +19,20 @@
       initialDelaySeconds: 90
       periodSeconds: 10
 - op: add
-  path: /spec/template/spec/containers/0/readinessProbe
+  path: /spec/template/spec/containers/0/probes
   value:
-    - httpGet:
-        path: /auth
-        port: 8080
-      initialDelaySeconds: 30
-      periodSeconds: 15
+    - livenessProbe:
+        httpGet:
+          path: /auth
+          port: 8080
+        initialDelaySeconds: 90
+        periodSeconds: 10
+      readinessProbe:
+        httpGet:
+          path: /auth
+          port: 8080
+        initialDelaySeconds: 30
+        periodSeconds: 15
 #- op: add
 #  path: /spec/template/spec/containers/0/args
 #  value: ["-b", "0.0.0.0", "-bprivate", "$(HOSTIP)", "--server-config", "standalone-ha.xml"]
