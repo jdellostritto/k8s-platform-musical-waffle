@@ -29,7 +29,6 @@
 - op: add
   path: /spec/template/spec/containers/0/args
   value: ["start-dev"]
-#  value: ["-b", "0.0.0.0", "-bprivate", "$(HOSTIP)", "--server-config", "standalone-ha.xml"]
 - op: add
   path: /spec/template/labels
   value:

@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: root-appbundle-cell-1
+  name: root-app-idp
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: cell1
+    namespace: idp
     name: in-cluster
-  project: project-cell-1
+  project: root-project-idp
   source:
-    path: apps/app-bundle/cell-1
+    path: app/idp/app-bundle
     repoURL: https://github.com/jdellostritto/k8s-platform-musical-waffle
     targetRevision: HEAD
   syncPolicy:
