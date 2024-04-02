@@ -40,4 +40,10 @@
     - configMapRef:
         name: config-map-keycloak
 - op: remove
+  path: /spec/template/spec/securityContext
+- op: remove
+  path: /spec/template/spec/automountServiceAccountToken
+- op: remove
   path: /spec/template/spec/containers/0/resources
+- op: remove
+  path: /spec/template/spec/containers/0/securityContext

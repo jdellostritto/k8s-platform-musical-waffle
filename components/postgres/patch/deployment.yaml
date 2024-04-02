@@ -26,3 +26,9 @@
   value:
     - mountPath: /var/lib/postgresql/data
       name: postgresdb
+- op: remove
+  path: /spec/template/spec/securityContext
+- op: remove
+  path: /spec/template/spec/automountServiceAccountToken
+- op: remove
+  path: /spec/template/spec/containers/0/securityContext
