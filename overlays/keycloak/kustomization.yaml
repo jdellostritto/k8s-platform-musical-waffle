@@ -2,14 +2,14 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 # Our base Manifests
 resources:
-- ../../../resources/workload/deployment
-- ../../../resources/network/service
-- ../../../resources/network/policy
+- ../../resources/workload/deployment
+- ../../resources/network/service
+- ../../resources/network/policy
 # These components are for the deploymnent and service.
 # components are shared across each environment. There are no patches for the service and deployment here.
 # Because the are the same for evey environemnt each env will pull the patch from the components (DRY)
 components:
-  - ../../../components/keycloak
+  - ../../components/keycloak
 
 # The name suffix will be appended the name of the resources (bases). 
 # In this example case our resource names are simply called `base`. 

@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-postgres-cell-1
+  name: app-postgres-idp
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: cell1
+    namespace: idp
     name: in-cluster
-  project: project-cell-1
+  project: root-project-idp
   source:
-    path: overlays/cell-1/postgres
+    path: overlays/postgres
     repoURL: https://github.com/jdellostritto/k8s-platform-musical-waffle
     targetRevision: HEAD
 
